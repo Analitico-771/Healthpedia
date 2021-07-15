@@ -1,11 +1,19 @@
 
-import './App.css';
+import React from 'react';
 
-function App() {
+const App = (props) => {
   return (
-    <>
-    App.js
-    </>
-  )}
+    
+    <div className="d-flex flex-column justify-content-center align-items-center">
+     <img height="100px" src="#" alt=""/>
+     <h1 className="text-white">Client Side Authentication with JWTs</h1>
+     <br/>
+     <h3 className="text-warning">Learning about JWTs for React Authentication</h3>
 
-export default App;
+     <h5 className="text-info">This is an unprotected page.  Any user should be able to see this page, regardless of their login status.</h5>
+    </div>
+   
+  )
+}
+
+export default App
