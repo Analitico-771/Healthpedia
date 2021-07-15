@@ -1,8 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
+import Welcome from './components/Welcome';
+import Feature from './components/Feature'; //protect
+import Signin from './components/auth/Signin';
+import Signout from './components/auth/Signout';
+import Signup from './components/auth/Signup';
+import BaseLayout from './components/layout/BaseLayout';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  './assets/styles.scss';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {Provider} from 'react-redux';
+import reduxThunk from 'redux-thunk'
+import reducer from './reducers/reducer';
+import requireAuth from './requireAuth';
+import Auth from './RequireAuthHooks';
+import {
+  BrowserRouter as Router,
+  Route, Switch
+} from 'react-router-dom'
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,7 +30,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
