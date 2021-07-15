@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Welcome from './components/Welcome';
-import Feature from './components/ProtectedContent'; //protect
+import Healthpedia from './components/ProtectedContent'; //protect
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
@@ -48,7 +48,7 @@ ReactDOM.render(
             <Route path='/signup' component={Signup}/>
             <Route exact path="/feature" render={()=>{
               <Auth>
-                <Feature />
+                <Healthpedia />
               </Auth>
             }} />
 
