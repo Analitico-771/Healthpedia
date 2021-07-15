@@ -32,7 +32,7 @@ const store = createStore(
   {},
   composeEnhancers(applyMiddleware(reduxThunk))
 );
-//
+
 
 //provider hooks react to redux.  
 //Must pass redux instance to provider via "store" prop.
