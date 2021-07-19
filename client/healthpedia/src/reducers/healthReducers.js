@@ -2,17 +2,37 @@
 import actionTypes from '../actions/actionTypes';
 
 const initialState = {
-   auth: ""
+   auth: "",
+   favorites: [],
+   journalEntries: []
+
 }
-const reducerTemplate = (state = initialState, action) => {
+const reducers = (state = initialState, action) => {
     switch(action.type){
-        case "AUTH_USER":
+        case actionTypes.authUser:
             return {
                 ...state,
                 auth: action.data
             }
+
+        case actionTypes.addFavorite:
+            var favoritesCopy = state.favorites;
+            favoritesCopy.push(action.data)
+            return {
+                ...state,
+                favorites: favoritesCopy
+            }
+
+        case actionTypes.addJournalEntries:
+            var journalEntriesCopy = state.journalEntries;
+            journalEntriesCopy.push(action.data)
+            return {
+                ...state,
+                journalEntries: journalEntriesCopy  
+            }
+
         default:
             return state;
     } 
 }
-export default reducerTemplate
+export default reducers

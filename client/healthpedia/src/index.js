@@ -1,18 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Welcome from './components/Welcome';
-import Healthpedia from './components/ProtectedContent'; //protect
+import Healthpedia from './components/Healthpedia'; //protect
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
 import BaseLayout from './components/layout/BaseLayout';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import  './assets/styles.scss';
+import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import reduxThunk from 'redux-thunk'
-import reducer from './reducers/healthReducers';
+import reducers from './reducers/healthReducers';
 import requireAuth from './requireAuth';
 import Auth from './RequireAuthHooks';
 import {
@@ -28,7 +27,7 @@ import {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  reducer,
+  reducers,
   {},
   composeEnhancers(applyMiddleware(reduxThunk))
 );
@@ -44,15 +43,13 @@ ReactDOM.render(
       <BaseLayout>
           <Switch>
             <Route exact path='/' component={App}/>
-            <Route path='/welcome' component={Welcome}/>
-            <Route path='/signup' component={Signup}/>
-            <Route exact path="/feature" render={()=>{
+            {/* <Route path='/welcome' component={Welcome}/> */}
+            <Route path='/register' component={Signup}/>
+            <Route exact path="/healthpedia" render={()=>(
               <Auth>
                 <Healthpedia />
               </Auth>
-            }} />
-
-            {/* <Route path='/feature' component={requireAuth(Feature)}/> */}
+            )} />
             <Route path='/signout' component={Signout}/>
             <Route path='/signin' component={Signin}/>
           </Switch>

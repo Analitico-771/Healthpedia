@@ -14,7 +14,7 @@ export const signUp = (formData, cb) => async dispatch => {
         //wait for an authentication token
         //call reducer to store token
         dispatch({
-            type: "AUTH_USER", 
+            type: actionTypes.authUser, 
             data: response.data.token
         })
         //invoking function to redirect user to feature page

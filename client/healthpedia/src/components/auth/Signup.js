@@ -35,9 +35,7 @@ const Signup = () => {
 
       <div className="register">
 
-            <img height="100px" src="https://avatars.githubusercontent.com/u/67744643?s=200&v=4" alt=""/>
-
-            <h2>Sign Up</h2>
+            <h2>Register</h2>
 
             <form onSubmit={handleSubmit} className="form">
 
@@ -51,7 +49,7 @@ const Signup = () => {
               </div>
 
               <div className="form__field">
-                <input type="submit" value="Sign Up" />
+                <input type="submit" value="Register" />
               </div>
 
           </form>
