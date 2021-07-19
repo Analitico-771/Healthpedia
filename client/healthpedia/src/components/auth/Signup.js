@@ -24,7 +24,7 @@ const Signup = () => {
       email: email,
       password: password
     }, ()=>{
-      history.push('/feature')
+      history.push('/healthpedia')
     }))
   }
 

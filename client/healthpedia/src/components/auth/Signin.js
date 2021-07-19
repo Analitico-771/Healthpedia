@@ -23,7 +23,7 @@ const Signin = () => {
       password: password
     }, ()=>{
       console.log('user sign in successfully');
-      history.push('/feature')
+      history.push('/healthpedia')
     }))
   }
 
@@ -33,9 +33,6 @@ const Signin = () => {
     <div className="grid align__item">
 
       <div className="register">
-
-        {/* <img height="100px" src="https://avatars.githubusercontent.com/u/67744643?s=200&v=4" alt=""/> */}
-       
 
         <h2>Sign In</h2>
 
