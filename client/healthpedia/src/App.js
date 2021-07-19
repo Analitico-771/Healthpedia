@@ -5,12 +5,23 @@ const App = (props) => {
   return (
     
     <div className="d-flex flex-column justify-content-center align-items-center">
-     <img height="100px" src="#" alt=""/>
-     <h1 className="text-white">Client Side Authentication with JWTs</h1>
-     <br/>
-     <h3 className="text-warning">Learning about JWTs for React Authentication</h3>
+      
+      <h1 className="text-white">
+       Welcome to Healthpedia
+      </h1>
 
-     <h5 className="text-info">This is an unprotected page.  Any user should be able to see this page, regardless of their login status.</h5>
+      <br/>
+
+      <h3 className="text-warning">
+       This is a place holder text for content
+      </h3>
+
+      <h5 className="text-info">
+        
+        This is a place holder text for content
+        
+      </h5>
+      
     </div>
    
   )

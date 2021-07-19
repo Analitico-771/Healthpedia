@@ -22,7 +22,7 @@ const Signin = () => {
       email: email,
       password: password
     }, ()=>{
-      console.log('user sign in succefully');
+      console.log('user sign in successfully');
       history.push('/feature')
     }))
   }
@@ -34,7 +34,7 @@ const Signin = () => {
 
       <div className="register">
 
-        <img height="100px" src="https://avatars.githubusercontent.com/u/67744643?s=200&v=4" alt=""/>
+        {/* <img height="100px" src="https://avatars.githubusercontent.com/u/67744643?s=200&v=4" alt=""/> */}
        
 
         <h2>Sign In</h2>
