@@ -4,7 +4,8 @@ import actionTypes from '../actions/actionTypes';
 const initialState = {
    auth: "",
    favorites: [],
-   journalEntries: []
+   journalEntries: [],
+   subjectInfo: []
 
 }
 const reducers = (state = initialState, action) => {
@@ -31,8 +32,15 @@ const reducers = (state = initialState, action) => {
                 journalEntries: journalEntriesCopy  
             }
 
+        case actionTypes.addSubjectInfo:
+            return {
+                ...state,
+                subjectInfo: action.payload  
+            }
+
         default:
             return state;
     } 
 }
+
 export default reducers
