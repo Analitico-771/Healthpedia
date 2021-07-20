@@ -6,7 +6,13 @@ import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
 import BaseLayout from './components/layout/BaseLayout';
+import HealthInfo from './components/HealthArticles';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
+// import * as Icon from 'react-bootstrap-icons';
 import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
@@ -19,7 +25,7 @@ import {
   Route, Switch
 } from 'react-router-dom'
 // import './index.css';
-
+library.add( faStar);
 
 // initializing redux store
 // requires a reducer. Second argument is for redux dev-tools extension.
@@ -48,6 +54,11 @@ ReactDOM.render(
             <Route exact path="/healthpedia" render={()=>(
               <Auth>
                 <Healthpedia />
+              </Auth>
+            )} />
+            <Route exact path="/healthinfo" render={()=>(
+              <Auth>
+                <HealthInfo />
               </Auth>
             )} />
             <Route path='/signout' component={Signout}/>

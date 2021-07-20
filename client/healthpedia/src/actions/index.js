@@ -51,3 +51,14 @@ export const signOut = (cb) => dispatch => {
     })
     cb();
 }
+/**
+ * add subjectData
+ */
+export const addSubjectData = (data) => {
+    return(
+        {
+            type: "ADD_SUBJECT_INFO", 
+            payload: data
+        }
+    )
+}

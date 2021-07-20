@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'//testing font awesome
 
 const App = (props) => {
   return (
@@ -13,7 +14,17 @@ const App = (props) => {
       <br/>
 
       <h3 className="text-warning">
-       This is a place holder text for content
+
+       Testing Font Awesome
+
+       {'\u00A0'} {'\u00A0'}
+
+       <button className="favorites" >Favorite</button>
+       
+       {'\u00A0'} {'\u00A0'} 
+       
+       <FontAwesomeIcon className="favorites" icon="faStar" />
+
       </h3>
 
       <h5 className="text-info">
