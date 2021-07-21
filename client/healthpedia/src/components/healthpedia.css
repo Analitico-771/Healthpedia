@@ -1,6 +1,10 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
+h5 {
+    text-align: center;
+}
+
 .health-table {
     /* width: 100%; */
     border: 1px solid whitesmoke;
@@ -8,6 +12,18 @@
 }
 
 .health-table > div {
+    border: 1px solid whitesmoke;
+    cursor: pointer;
+
+}
+
+.health-articles {
+    /* width: 100%; */
+    border: 1px solid whitesmoke;
+    /* overflow-y: scroll; */
+}
+
+.health-articles > div {
     border: 1px solid whitesmoke;
     cursor: pointer;
 
@@ -43,3 +59,38 @@
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
+
+  /* target="_blank" */
+  
+  .relateditems {
+      
+    /* width: 100%; */
+    /* border: 1px solid whitesmoke; */
+    /* overflow-y: scroll; */
+}
+
+.relateditems > div {
+    margin-left: 20px;
+    /* border: 1px solid whitesmoke; */
+    /* cursor: pointer; */
+
+}
+
+.relateditems > p {
+    margin-left: 20px;
+    /* border: 1px solid whitesmoke; */
+    /* cursor: pointer; */
+
+}
+
+.relateditems > h1 {
+    /* border: 1px solid whitesmoke; */
+    /* cursor: pointer; */
+
+}
+
+.relateditems > span {
+    /* border: 1px solid whitesmoke; */
+    /* cursor: pointer; */
+
+}
