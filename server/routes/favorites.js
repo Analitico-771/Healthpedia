@@ -9,7 +9,7 @@ router.post('/favorites', requireJwt, async(req, res) => {
     let categories = req.body.categories;
     let topic = req.body.topic;
     try{
-        let favorite = await db.favorites.create({categories: categories, topic: topic})
+        await db.favorites.create({categories: categories, topic: topic})
         return res.send("success")
     }
     catch(error){
