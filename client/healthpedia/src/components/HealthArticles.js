@@ -11,26 +11,7 @@ import './healthpedia.css'
 const HealthInfo = () => {
 
     const subjectData =  useSelector(state => state.subjectInfo);
-    // console.log(subjectData);
-    console.log("Resource", subjectData);
-    //console.log("Resource", subjectData.Result.Resources.Resource);
-    // console.log(subjectData.Result.Resources.Resource.RelatedItems);
-    // const [healthData, setHealthData] = useState([]);
-    // setHealthData(subjectInfo.RelatedItems.RelatedItem);
-    // const healthData = {
-    //     ...subjectInfo,
-    //     array: subjectInfo.Result.Resources.Resource.RelatedItems.RelatedItem
-    // }
-    // console.log(healthData);
-    // console.log(healthData.Result.Resources.Resource.RelatedItems.RelatedItem);
-    // console.log(subjectInfo.Result.Resources.Resource.RelatedItems.RelatedItem);
-    // const healthData = [
-    //     data: subjectInfo
-    // ];
-    // setHealthData(subjectInfo.Result.Resources.Resource.RelatedItems);
-    // setHealthData(subjectInfo);
-
-    // const healthData = subjectData.RelatedItems.RelatedItem
+    // console.log("Resource", subjectData);
 
     useEffect(() => {
 
@@ -39,16 +20,16 @@ const HealthInfo = () => {
         //     effect
         //   };
     })//componenentDidMount
-    // console.log(subjectData);
-    // console.log(subjectData.Result.Resources.Resource)
-    // console.log(subjectData.Result.Resources.Resource[0].RelatedItems.RelatedItem)
 
     return <>
         
         <div style={{height: "100vh"}} className="d-flex flex-column align-items-center">
-        <h1 className="text-white">Welcome to Helthpedia Information </h1>
+        <br />
+        <h1 className="text-white">Welcome to Healthpedia Information </h1>
+        <br />
 
         <h5 className="text-info align-items-center">You can read more about the Topics or Categories you selected. You can also 'Click' on a link to read more about a specific subject of interest</h5>
+        <br />
 
         {/* <div className="text-info">Topic ID: {`${subjectData.Result.Query.TopicId}`}</div> */}
 

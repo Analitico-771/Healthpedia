@@ -59,10 +59,8 @@ h5 {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
-
-  /* target="_blank" */
   
-  .relateditems {
+.relateditems {
       
     /* width: 100%; */
     /* border: 1px solid whitesmoke; */
@@ -84,12 +82,28 @@ h5 {
 }
 
 .relateditems > h1 {
+    margin-left: 20px;
+    /* border: 1px solid whitesmoke; */
+    /* cursor: pointer; */
+
+}
+
+.relateditems > h2 {
+    margin-left: 20px;
+    /* border: 1px solid whitesmoke; */
+    /* cursor: pointer; */
+
+}
+
+.relateditems > h3 {
+    margin-left: 20px;
     /* border: 1px solid whitesmoke; */
     /* cursor: pointer; */
 
 }
 
 .relateditems > span {
+    margin-left: 20px;
     /* border: 1px solid whitesmoke; */
     /* cursor: pointer; */
 

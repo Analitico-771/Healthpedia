@@ -3,7 +3,11 @@ import actionTypes from '../actions/actionTypes';
 
 const initialState = {
    auth: "",
-   favorites: [],
+   favorites: [{
+       id: "",
+       type: "",
+       title: "",
+   }],
    journalEntries: [],
    subjectInfo: []
 

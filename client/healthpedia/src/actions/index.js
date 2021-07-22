@@ -61,4 +61,13 @@ export const addSubjectData = (data) => {
             payload: data
         }
     )
+
+}
+export const addFavorite = (data) => {
+    return(
+        {
+            type: "ADD_FAVORITE", 
+            payload: data
+        }
+    )
 }
