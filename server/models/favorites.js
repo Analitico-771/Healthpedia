@@ -14,8 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   favorites.init({
-    categories: DataTypes.STRING,
-    topic: DataTypes.STRING
+    types: DataTypes.STRING,
+    title: DataTypes.STRING,
+    apiId: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'favorites',
