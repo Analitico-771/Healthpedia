@@ -67,8 +67,8 @@ const Healthpedia = () => {
   }
 
   // onClick function for favorites id, topics, or categories;
-  const onClickFavorite = (id, type, title) => {
-    let favorite = [{ id, type, title }]
+  const onClickFavorite = (apiId, type, title) => {
+    let favorite = { apiId, type, title }
     dispatch(addFavorite(favorite));//Original state dispatch
   }
 
@@ -81,11 +81,11 @@ const Healthpedia = () => {
       if(type === "Topic"){
         // console.log(id);
         url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?lang=en&topicId=${id}`;
-      }                                                                           //"Topic"
+      }                                                               //"Topic" ${type}
       else{
         // console.log(id);
         url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?lang=en&categoryId=${id}`;
-      }                                                                          //"Category"
+      }                                                             //"Category" ${type}
       
       const response = await fetch(url);
       const subjectData = await response.json();

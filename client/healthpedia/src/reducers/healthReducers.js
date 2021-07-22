@@ -3,11 +3,7 @@ import actionTypes from '../actions/actionTypes';
 
 const initialState = {
    auth: "",
-   favorites: [{
-       id: "",
-       type: "",
-       title: "",
-   }],
+   favorites: [],
    journalEntries: [],
    subjectInfo: []
 
@@ -21,7 +17,7 @@ const reducers = (state = initialState, action) => {
             }
 
         case actionTypes.addFavorite:
-            var favoritesCopy = state.favorites;
+            var favoritesCopy = state.favorites.slice();
             favoritesCopy.push(action.data)
             return {
                 ...state,
