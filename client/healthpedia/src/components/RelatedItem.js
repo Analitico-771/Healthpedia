@@ -9,13 +9,17 @@ const RelatedItem = (props) => {
     <div >
 
     
-    <h3 className="text-warning"> {props.title} </h3>
+    <h3 className="text-warning"> {props.title} {'\u00A0'}
+    
+    <button className="favorites" id={`${props.id}`}>
+      Favorite
+      </button>
+    </h3>
+  
+    <br />
 
     <div className="relateditems" dangerouslySetInnerHTML={{__html:props.content.replace(/href/g, "target='_blank' href")}}></div>
 
-    <button className="favorites" id={`${props.id}`}>
-      Favorite
-    </button>
 
     </div>
   )
