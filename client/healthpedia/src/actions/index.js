@@ -63,7 +63,11 @@ export const addSubjectData = (data) => {
     )
 
 }
+/**
+ * add Favorite
+ */
 export const addFavorite = (data) => {
+    console.log("payload data", data)
     return(
         {
             type: "ADD_FAVORITE", 

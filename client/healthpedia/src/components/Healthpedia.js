@@ -12,7 +12,8 @@ const Healthpedia = () => {
   //declare hooks
   // const [topics, setTopics] = useState(false);
   // const [categories, setCategories] = useState(false);
-  const [favorite, setFavorite] = useState([]);
+  const [favorite, setFavorite] = useState([]);//for stretch goal
+  const [yellowStar, setyellowStar] = useState(false);
   const [currentJournalEntry, setCurrentJournalEntry] = useState({});
   const [healthInfo, setHealthInfo] = useState([]);
   // const [subjectInfo, setSubjectInfo] = useState([]);
@@ -62,14 +63,32 @@ const Healthpedia = () => {
     }
     // dispatch(submit(favorites, journalEntries));
     catch(err) {
-      alert(err);
+      alert("There's a problem with the website. Please wait a few moments and try again ", err);
     }
   }
 
   // onClick function for favorites id, topics, or categories;
-  const onClickFavorite = (apiId, type, title) => {
-    let favorite = { apiId, type, title }
+  const onClickFavorite = (apiId, type, title, isFavorite) => {
+
+    let favorite = { apiId, type, title, isFavorite };
+
+    console.log("Dispatch Favorite", favorite);
+
     dispatch(addFavorite(favorite));//Original state dispatch
+
+    setyellowStar(true);
+  }
+
+  // onClick function for favorites id, topics, or categories;
+  const onClickRemoveFavorite = (apiId, type, title) => {
+
+    // let favorite = { apiId, type, title };
+
+    // console.log("Dispatch Favorite", favorite);
+
+    // dispatch(addFavorite(favorite));//Original state dispatch
+
+   setyellowStar(false);
   }
 
 
@@ -95,7 +114,7 @@ const Healthpedia = () => {
       history.push("/healthinfo")
     }
     catch(err) {
-      alert(err);
+      alert("There's a problem with the website. Please wait a few moments and try again ", err);
     }
 
   }
@@ -105,38 +124,35 @@ const Healthpedia = () => {
   return (
 
       <div style={{height: "100vh"}} className="d-flex flex-column align-items-center">
-      <h1 className="text-white">Healthpedia Page</h1>
-      <h3 className="text-warning">This is place holder text{'\u00A0'} {'\u00A0'} <FontAwesomeIcon className="favorites" icon="faStar" /></h3>
-      <h5 className="text-info">This is place holder text</h5>
+        <br />
 
-      <div>
-        <button onClick={()=>fetchHealthData("topics")}>See Topics
-        </button>
-      </div>
-      <br />
-      <div>
-        <button onClick={()=>fetchHealthData("categories")}>See Categories
-        </button>
-      </div>
-      <br />
+        <h1 className="text-white">Healthpedia Page</h1>
+        <h3 className="text-warning">This is place holder text{'\u00A0'} {'\u00A0'} <FontAwesomeIcon className="favorites" icon="faStar" /></h3>
+        <h5 className="text-info">This is place holder text</h5>
 
-      
-      {/* begin mapping health Data */}
-        <div className="health-table d-flex flex-column"> {healthInfo && healthInfo.map(healthInfoObj => {
-          return <>
-            <div className="align-middle p-2" onClick={()=>onClickSubject(healthInfoObj.Id, healthInfoObj.Type)}>{`${healthInfoObj.Title}\u00A0\u00A0`} 
-            
-            <button className="favorites" id={`${healthInfoObj.Id}`} onClick={()=>onClickFavorite(healthInfoObj.Id, healthInfoObj.Type, healthInfoObj.Title)}>
-              Favorite
-            </button>
-
-            </div>
-          </>;
-          })}
-      {/* end mapping health Data */}
+        <div>
+          <button onClick={()=>fetchHealthData("topics")}>See Topics
+          </button>
         </div>
-      
+        <br />
+        <div>
+          <button onClick={()=>fetchHealthData("categories")}>See Categories
+          </button>
+        </div>
+        <br />
 
+        {/* begin mapping health Data */}
+          <div className="health-table d-flex flex-column"> {healthInfo && healthInfo.map(healthInfoObj => {
+            return <>
+              <div className="align-middle p-2" onClick={()=>onClickSubject(healthInfoObj.Id, healthInfoObj.Type)}>{`${healthInfoObj.Title}\u00A0\u00A0`} 
+
+              {yellowStar === false ? <FontAwesomeIcon icon={["fa", "star"]} className="star" onClick={()=>onClickFavorite(healthInfoObj.Id, healthInfoObj.Type, healthInfoObj.Title, yellowStar)} /> : <FontAwesomeIcon icon={["fa", "star"]} className="star active" onClick={()=>onClickRemoveFavorite(healthInfoObj.Id, healthInfoObj.Type, healthInfoObj.Title)}/>}
+
+              </div>
+            </>;
+            })}
+        {/* end mapping health Data */}
+          </div>
       </div>
     )
 };

@@ -58,53 +58,93 @@ h5 {
     background-color: goldenrod;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
-  
+}
+
+
+  /* Healthpedia Related items page styling */
 .relateditems {
+    /* this is the parent class */
+    color: whitesmoke
       
-    /* width: 100%; */
-    /* border: 1px solid whitesmoke; */
-    /* overflow-y: scroll; */
+    
 }
 
 .relateditems > div {
     margin-left: 20px;
     /* border: 1px solid whitesmoke; */
-    /* cursor: pointer; */
 
 }
 
 .relateditems > p {
     margin-left: 20px;
     /* border: 1px solid whitesmoke; */
-    /* cursor: pointer; */
+
 
 }
 
 .relateditems > h1 {
     margin-left: 20px;
     /* border: 1px solid whitesmoke; */
-    /* cursor: pointer; */
+
 
 }
 
 .relateditems > h2 {
     margin-left: 20px;
     /* border: 1px solid whitesmoke; */
-    /* cursor: pointer; */
+
 
 }
 
 .relateditems > h3 {
     margin-left: 20px;
     /* border: 1px solid whitesmoke; */
-    /* cursor: pointer; */
+
+
+}
+
+.relateditems > h4 {
+    margin-left: 20px;
+    /* border: 1px solid whitesmoke; */
+
+
+}
+
+.relateditems > h5 {
+    margin-left: 20px;
+    /* border: 1px solid whitesmoke; */
+
 
 }
 
 .relateditems > span {
     margin-left: 20px;
     /* border: 1px solid whitesmoke; */
-    /* cursor: pointer; */
 
+
+}
+
+.relateditems > li {
+    content: yellow;
+    /* border: 1px solid whitesmoke; */
+
+
+}
+
+.relateditems > a {
+    color: red;
+    cursor: pointer;
+}
+
+/* END Healthpedia Related items page styling */
+
+/* Favorite star do not CSS */
+.star {
+    color: white;
+    cursor: pointer;
+}
+
+.active, .star:hover {
+    color: goldenrod;
+    cursor: pointer;
 }
