@@ -6,7 +6,7 @@ const RelatedItem = (props) => {
   // console.log(props)
 
   return (
-    <div>
+    <div >
 
     
     <h3 className="text-warning"> {props.title} </h3>
