@@ -6,10 +6,11 @@ const db = require('../models');
 let requireJwt = passport.authenticate('jwt', {session: false})
 //to be changed to add favorites
 router.post('/favorites', requireJwt, async(req, res) => {
-    let categories = req.body.categories;
-    let topic = req.body.topic;
+    let apiId = req.body.apiId;
+    let types = req.body.types;
+    let title = req.body.title;
     try{
-        await db.favorites.create({categories: categories, topic: topic})
+        await db.favorites.create({apiId: apiId, types: types, title: title})
         return res.send("success")
     }
     catch(error){
