@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { addSubjectData } from '../actions/index'
+import { addFavorite } from '../actions/index'
 import './healthpedia.css'
 import { useHistory } from "react-router-dom";
 
@@ -11,7 +12,7 @@ const Healthpedia = () => {
   //declare hooks
   // const [topics, setTopics] = useState(false);
   // const [categories, setCategories] = useState(false);
-  const [currentFavorite, setCurrentFavorite] = useState({});
+  const [favorite, setFavorite] = useState([]);
   const [currentJournalEntry, setCurrentJournalEntry] = useState({});
   const [healthInfo, setHealthInfo] = useState([]);
   // const [subjectInfo, setSubjectInfo] = useState([]);
@@ -55,16 +56,9 @@ const Healthpedia = () => {
       
       const response = await fetch(url);
       const healthInfo = await response.json();
-      console.log(healthInfo);
+      // console.log(healthInfo);
       setHealthInfo(healthInfo.Result.Items.Item);
-      // if(healthInfo.result.error !== 'False'){
-      //   alert(`Ooops! ${healthInfo.result.error}.  Please try again!`);
-      // }
-      // else {
-      //   return healthInfo;
-      //   // console.log(healthInfo); //console.log api object
-      //   // dispatch(submit(whaleAddress, walletData));
-      // }
+      
     }
     // dispatch(submit(favorites, journalEntries));
     catch(err) {
@@ -73,33 +67,31 @@ const Healthpedia = () => {
   }
 
   // onClick function for favorites id, topics, or categories;
-  const onClickFavorite = async (id, subject) => {
-
+  const onClickFavorite = (id, type, title) => {
+    let favorite = [{ id, type, title }]
+    dispatch(addFavorite(favorite));//Original state dispatch
   }
 
 
   // onClick function for fetching id, topics, or categories;
   const onClickSubject = async (id, type) => {
     try {
-      // const classArray = e.target.className.split(" ");
+
       let url = "";
       if(type === "Topic"){
-        console.log(id);
+        // console.log(id);
         url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?lang=en&topicId=${id}`;
-      }
+      }                                                                           //"Topic"
       else{
-        console.log(id);
+        // console.log(id);
         url = `https://health.gov/myhealthfinder/api/v3/topicsearch.json?lang=en&categoryId=${id}`;
-      }
+      }                                                                          //"Category"
       
       const response = await fetch(url);
       const subjectData = await response.json();
-      // console.log(subjectInfo);
-      // setSubjectInfo(subjectInfo.Result.Resources.Resource);
+      
       dispatch(addSubjectData(subjectData));//Original state dispatch
-      // dispatch(addSubjectData(subjectData.Result.Resources.Resource));
-      // console.log(subjectData.Result.Resources.Resource);
-      // console.log(subjectData.Result.Resources.Resource.RelatedItems.RelatedItem);
+      
       history.push("/healthinfo")
     }
     catch(err) {
@@ -108,10 +100,7 @@ const Healthpedia = () => {
 
   }
 
-  // fetchHealthData();
-
   //delete favorites
-
 
   return (
 
@@ -137,7 +126,7 @@ const Healthpedia = () => {
           return <>
             <div className="align-middle p-2" onClick={()=>onClickSubject(healthInfoObj.Id, healthInfoObj.Type)}>{`${healthInfoObj.Title}\u00A0\u00A0`} 
             
-            <button className="favorites" id={`${healthInfoObj.Id}`} >
+            <button className="favorites" id={`${healthInfoObj.Id}`} onClick={()=>onClickFavorite(healthInfoObj.Id, healthInfoObj.Type, healthInfoObj.Title)}>
               Favorite
             </button>
 
