@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom'
 import { Link } from 'react-router-dom';
-import {signIn} from '../../actions/index'
+import {signIn} from '../../redux/index'
 
 
 const Signin = () => {

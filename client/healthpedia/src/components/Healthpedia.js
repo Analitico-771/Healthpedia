@@ -2,8 +2,8 @@
 import React, {useState, useEffect} from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { addSubjectData } from '../actions/index'
-import { addFavorite } from '../actions/index'
+import { addSubjectData } from '../redux/index'
+import { addFavorite } from '../redux/index'
 import './healthpedia.css'
 import { useHistory } from "react-router-dom";
 
@@ -21,6 +21,7 @@ const Healthpedia = () => {
   const subjectInfo =  useSelector(state => state.subjectInfo);
   const favorites = useSelector(state => state.favorites);
   const journalEntries = useSelector(state => state.journalEntries);
+  console.log("favorites", favorites)
  
   //dispatch
   const dispatch = useDispatch();

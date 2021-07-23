@@ -1,5 +1,5 @@
 
-import actionTypes from '../actions/actionTypes';
+import actionTypes from '../actionTypes';
 
 const initialState = {
    auth: "",
@@ -13,6 +13,7 @@ const initialState = {
 
 }
 const reducers = (state = initialState, action) => {
+    console.log("state", state)
     switch(action.type){
         case actionTypes.authUser:
             return {
@@ -21,22 +22,23 @@ const reducers = (state = initialState, action) => {
             }
 
         case actionTypes.addFavorite:
-            console.log("action data", action.data)//undefined
+            console.log("action data", action.payload)//undefined
+            console.log("state.favorites", state.favorites)
             var favoritesCopy = state.favorites.slice();
             console.log("favorite copy", favoritesCopy);
-            favoritesCopy.push(action.data)
+            favoritesCopy.push(action.payload)
             return {
                 ...state,
                 favorites: favoritesCopy
             }
 
-        case actionTypes.addJournalEntries:
-            var journalEntriesCopy = state.journalEntries;
-            journalEntriesCopy.push(action.data)
-            return {
-                ...state,
-                journalEntries: journalEntriesCopy  
-            }
+        // case actionTypes.addJournalEntries:
+        //     var journalEntriesCopy = state.journalEntries;
+        //     journalEntriesCopy.push(action.data)
+        //     return {
+        //         ...state,
+        //         journalEntries: journalEntriesCopy  
+        //     }
 
         case actionTypes.addSubjectInfo:
             return {

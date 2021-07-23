@@ -17,7 +17,7 @@ import  './assets/styles.scss';
 import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import reduxThunk from 'redux-thunk'
-import reducers from './reducers/healthReducers';
+import reducers from './redux/reducers/healthReducers';
 import requireAuth from './requireAuth';
 import Auth from './RequireAuthHooks';
 import {
@@ -34,7 +34,6 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   reducers,
-  {},
   composeEnhancers(applyMiddleware(reduxThunk))
 );
 
