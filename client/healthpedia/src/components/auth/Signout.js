@@ -1,7 +1,7 @@
 
 import React from "react";
 import {useDispatch} from 'react-redux';
-import {signOut} from '../../actions/index';
+import {signOut} from '../../redux/index';
 import {useHistory} from 'react-router-dom'
 
 const Signout = () => {

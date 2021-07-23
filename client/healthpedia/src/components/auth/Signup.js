@@ -2,7 +2,7 @@
 import React, {useState} from "react";
 import {useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
-import {signUp} from '../../actions/index';
+import {signUp} from '../../redux/index';
 import {useHistory} from 'react-router-dom';
 
 
