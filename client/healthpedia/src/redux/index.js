@@ -6,11 +6,11 @@ import axios from 'axios';
  */
 export const signUp = (formData, cb) => async dispatch => {
     try{
-        console.log(formData);
+        // console.log(formData);
         //take formdata: email, password
         //call our server api: /register
         let response = await axios.post('/register', formData);
-        console.log(response.data.token);
+        // console.log(response.data.token);
         //wait for an authentication token
         //call reducer to store token
         dispatch({
@@ -21,7 +21,7 @@ export const signUp = (formData, cb) => async dispatch => {
         cb();
     }
     catch(err){
-        console.log("error message", err);
+        // console.log("error message", err);
     }
 }
 /**
@@ -67,18 +67,23 @@ export const addSubjectData = (data) => {
  * add Favorite
  */
  export const addFavorite = (data) => async dispatch => {
-    console.log("payload data", data)
+    // console.log("payload data", data)
     try {
         //make api call : /favorites
-        let response = await axios.post('http://localhost:3001/favorites', data);
-        console.log("response",response)
+        let response = await axios.post('/favorites', data);
+        console.log("response", response.data)
         dispatch({
             type: "ADD_FAVORITE",
-            payload: response
+            payload: {
+                id: response.data.id,
+                apiId: response.data.apiId,
+                type: response.data.types,
+                title: response.data.title
+            }
         })
     }
     catch(err){
-        console.log("axios err: favorite", err)
+        // console.log("axios err: favorite", err)
     }
 }
 

@@ -3,17 +3,13 @@ import actionTypes from '../actionTypes';
 
 const initialState = {
    auth: "",
-   favorites: [{
-    apiId: "",
-    type: "",
-    title: ""
-   }],
+   favorites: [],
    journalEntries: [],
    subjectInfo: []
 
 }
 const reducers = (state = initialState, action) => {
-    console.log("state", state)
+    // console.log("state", state)
     switch(action.type){
         case actionTypes.authUser:
             return {
@@ -22,10 +18,9 @@ const reducers = (state = initialState, action) => {
             }
 
         case actionTypes.addFavorite:
-            console.log("action data", action.payload)//undefined
-            console.log("state.favorites", state.favorites)
+            // console.log("action data", action.payload)
             var favoritesCopy = state.favorites.slice();
-            console.log("favorite copy", favoritesCopy);
+            // console.log("favorite copy", favoritesCopy);
             favoritesCopy.push(action.payload)
             return {
                 ...state,
