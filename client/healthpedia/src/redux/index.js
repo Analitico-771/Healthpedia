@@ -66,12 +66,29 @@ export const addSubjectData = (data) => {
 /**
  * add Favorite
  */
-export const addFavorite = (data) => {
+ export const addFavorite = (data) => async dispatch => {
     console.log("payload data", data)
-    return(
-        {
-            type: "ADD_FAVORITE", 
-            payload: data
-        }
-    )
+    try {
+        //make api call : /favorites
+        let response = await axios.post('http://localhost:3001/favorites', data);
+        console.log("response",response)
+        dispatch({
+            type: "ADD_FAVORITE",
+            payload: response
+        })
+    }
+    catch(err){
+        console.log("axios err: favorite", err)
+    }
 }
+
+
+// export const addFavorite = (data) => {
+//     console.log("payload data", data)
+//     return(
+//         {
+//             type: "ADD_FAVORITE", 
+//             payload: data
+//         }
+//     )
+// }
