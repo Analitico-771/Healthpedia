@@ -21,7 +21,7 @@ const Healthpedia = () => {
   //const subjectInfo =  useSelector(state => state.subjectInfo);
   const favorites = useSelector(state => state.favorites);
   //const journalEntries = useSelector(state => state.journalEntries);
-  console.log("favorites", favorites)
+  //console.log("favorites", favorites)
  
   //dispatch
   const dispatch = useDispatch();
@@ -73,7 +73,7 @@ const Healthpedia = () => {
 
     let favorite = { apiId, type, title, isFavorite };
 
-    console.log("Dispatch Favorite", favorite);
+    // console.log("Dispatch Favorite", favorite);
 
     dispatch(addFavorite(favorite));//Original state dispatch
 
@@ -82,6 +82,8 @@ const Healthpedia = () => {
 
   // onClick function for favorites id, topics, or categories;
   const onClickRemoveFavorite = (apiId, type, title) => {
+    
+    //This is for a stretch goal
 
     // let favorite = { apiId, type, title };
 
@@ -128,16 +130,22 @@ const Healthpedia = () => {
         <br />
 
         <h1 className="text-white">Healthpedia Page</h1>
-        <h3 className="text-warning">This is place holder text{'\u00A0'} {'\u00A0'} <FontAwesomeIcon className="favorites" icon="faStar" /></h3>
-        <h5 className="text-info">This is place holder text</h5>
-
+        
+        <h5 className="text-info">
+        <br />
+        To answer specific health related questions please see Categories
+        </h5>
         <div>
-          <button onClick={()=>fetchHealthData("topics")}>See Topics
+          <button className="topics" onClick={()=>fetchHealthData("topics")}>See Topics
           </button>
         </div>
         <br />
+        <h5 className="text-info">
+        <br />
+        To answer questions regarding general health concerns please see Topics
+        </h5>
         <div>
-          <button onClick={()=>fetchHealthData("categories")}>See Categories
+          <button className="categories" onClick={()=>fetchHealthData("categories")}>See Categories
           </button>
         </div>
         <br />
@@ -145,7 +153,7 @@ const Healthpedia = () => {
         {/* begin mapping health Data */}
           <div className="health-table d-flex flex-column"> {healthInfo && healthInfo.map(healthInfoObj => {
             return <>
-              <div className="align-middle p-2" onClick={()=>onClickSubject(healthInfoObj.Id, healthInfoObj.Type)}>{`${healthInfoObj.Title}\u00A0\u00A0`} 
+              <div className="align-middle p-2 text-info" onClick={()=>onClickSubject(healthInfoObj.Id, healthInfoObj.Type)}>{`${healthInfoObj.Title}\u00A0\u00A0`} 
 
               {yellowStar === false ? <FontAwesomeIcon icon={["fa", "star"]} className="star" onClick={()=>onClickFavorite(healthInfoObj.Id, healthInfoObj.Type, healthInfoObj.Title, yellowStar)} /> : <FontAwesomeIcon icon={["fa", "star"]} className="star active" onClick={()=>onClickRemoveFavorite(healthInfoObj.Id, healthInfoObj.Type, healthInfoObj.Title)}/>}
 
