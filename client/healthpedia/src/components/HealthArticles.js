@@ -1,8 +1,6 @@
 
-import React, {useState, useEffect} from "react";
-import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { addSubjectData } from '../redux/index'
+import React, { useEffect} from "react";
+import { useSelector } from 'react-redux';
 import RelatedItem from "./RelatedItem";
 import './healthpedia.css'
 
