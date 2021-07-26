@@ -1,0 +1,20 @@
+{
+  "name": "healthpedia",
+  "version": "1.0.0",
+  "description": "The purpose of the app Healthpedia is to provide a safe place where extensive research regarding top health concerns can be asked and answered quickly and efficiently. In this app we have authentication guarded sections of the app that is password and login protected. The protected section is  where the user can store and save personal attributes and heath searched topics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-prebuild": "cd client/healthpedia && npm install && npm run-script build && mv build ../server/public && cd ../server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaIitico/Healthpedia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnaIitico/Healthpedia/issues"
+  },
+  "homepage": "https://github.com/AnaIitico/Healthpedia#readme"
+}
