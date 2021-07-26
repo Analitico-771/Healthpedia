@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 3001
 const apiKey = process.env.REACT_APP_API_KEY;
 const secrets = process.env.REACT_APP_SECRETS;
 
+app.use(express.static(path.join(__dirname, '/public')))
+
 app.use(require('./routes/favorites'));
 
 app.use(require('./routes/authentication'));
