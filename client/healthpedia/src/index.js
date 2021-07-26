@@ -18,7 +18,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux';
 import reduxThunk from 'redux-thunk'
 import reducers from './redux/reducers/healthReducers';
-import requireAuth from './requireAuth';
+//import requireAuth from './requireAuth';
 import Auth from './RequireAuthHooks';
 import {
   BrowserRouter as Router,

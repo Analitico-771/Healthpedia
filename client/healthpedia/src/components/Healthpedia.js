@@ -12,15 +12,15 @@ const Healthpedia = () => {
   //declare hooks
   // const [topics, setTopics] = useState(false);
   // const [categories, setCategories] = useState(false);
-  const [favorite, setFavorite] = useState([]);//for stretch goal
+  //const [favorite, setFavorite] = useState([]);//for stretch goal
   const [yellowStar, setyellowStar] = useState(false);
-  const [currentJournalEntry, setCurrentJournalEntry] = useState({});
+  //const [currentJournalEntry, setCurrentJournalEntry] = useState({});
   const [healthInfo, setHealthInfo] = useState([]);
   // const [subjectInfo, setSubjectInfo] = useState([]);
 
-  const subjectInfo =  useSelector(state => state.subjectInfo);
+  //const subjectInfo =  useSelector(state => state.subjectInfo);
   const favorites = useSelector(state => state.favorites);
-  const journalEntries = useSelector(state => state.journalEntries);
+  //const journalEntries = useSelector(state => state.journalEntries);
   console.log("favorites", favorites)
  
   //dispatch
